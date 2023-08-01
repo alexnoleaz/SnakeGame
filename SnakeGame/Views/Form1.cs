@@ -122,7 +122,34 @@ namespace SnakeGame.Views
                             break;
                     }
 
+                    if (_snake[i].X < 0)
+                        _snake[i].X = _maxWidth;
 
+                    if (_snake[i].X > _maxWidth)
+                        _snake[i].X = 0;
+
+                    if (_snake[i].Y < 0)
+                        _snake[i].Y = _maxHeight;
+
+                    if (_snake[i].Y > _maxHeight)
+                        _snake[i].Y = 0;
+
+                    if (_snake[i].X == _food.X && _snake[i].Y == _food.Y)
+                        EatFood();
+
+                    for (int j = 1; j < _snake.Count; j++)
+                    {
+                        if (_snake[i].X == _snake[j].X && _snake[i].Y == _snake[j].Y)
+                        {
+                            GameOver();
+
+                            var result = MessageBox.Show("Play Again?", "GAME OVER", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                            if (result != DialogResult.Yes)
+                                Close();
+
+                            RestartGame();
+                        }
+                    }
                 }
             }
 
@@ -182,7 +209,6 @@ namespace SnakeGame.Views
                 Y = _rand.Next(2, _maxHeight)
             };
         }
-
 
         private void GameOver()
         {
