@@ -1,0 +1,54 @@
+# Binaries and executables
+*bin/
+*obj/
+*.vs/
+
+# Visual Studio configuration files
+*.suo
+*.user
+*.sln.docstates
+
+# Cache and backup files
+[Tt]humbs.db
+*.DS_Store
+*.cache
+*.log
+
+# Compiler generated files
+*.exe
+*.dll
+*.pdb
+*.resources
+*.resx
+*.manifest
+
+# Visual Studio specific project files
+*.csproj.user
+*.vcxproj.user
+*.vbproj.user
+*.fsproj.user
+*.suo
+*.user
+*.vssscc
+*.vspscc
+
+# NuGet packages
+packages/
+
+# Logs
+*.log
+*.logs
+
+# Publish folder
+publish/
+
+# Code analysis files
+*.esproj
+*.ruleset
+*.DotSettings
+
+# Unit test folders and files
+TestResults/
+
+# Debugger tool cache folder
+ipch/
